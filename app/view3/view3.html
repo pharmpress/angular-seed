@@ -1,0 +1,21 @@
+<p>This is the partial for view 3.</p>
+<div ng-controller="View3Ctrl">
+      <p>
+        Name: {{name}}
+      </p>
+
+      <h2>Debug info</h2>
+      <p>
+        $location.protocol() = {{$location.protocol()}}<br>
+        $location.host() = {{$location.host()}}<br>
+        $location.port() = {{$location.port()}}<br>
+        $location.path() = {{$location.path()}}<br>
+        $location.search() = {{$location.search()}}<br>
+        $location.hash() = {{$location.hash()}}<br>
+      </p>
+
+    </div>
+<p>
+  Showing of 'interpolate' filter:
+  {{ 'Current version is v%VERSION%.' | interpolate }}
+</p>

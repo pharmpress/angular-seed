@@ -4,14 +4,8 @@ exports.config = {
   allScriptsTimeout: 11000,
 
   specs: [
-    '*.feature'
+    '*.jasmine.js'
   ],
-
-  cucumberOpts: {
-    require: [
-      '*.steps.js'
-    ]
-  },
 
   capabilities: {
     'browserName': 'chrome'
@@ -19,10 +13,7 @@ exports.config = {
 
   baseUrl: 'http://localhost:8000/',
 
-  framework: 'custom',
-
-  // path relative to the current config file 
-  frameworkPath: require.resolve('protractor-cucumber-framework'),
+  framework: 'jasmine',
 
   jasmineNodeOpts: {
     defaultTimeoutInterval: 30000
