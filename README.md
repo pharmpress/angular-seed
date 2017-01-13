@@ -111,9 +111,9 @@ e2e-tests/            --> end-to-end tests
 
 ## Mock API calls
 
-If you go to [http://localhost:8000/#!/view3][this page]. You will notice that an internal API call to "/api/people/jhon" is failing.
+If you go to [`http://localhost:8000/#!/view3`][local-app-url]. You will notice that an internal API call to "/api/people/jhon" is failing.
 
-Now if you add `apimock=true` to the browser addressbar [http://localhost:8000/#!/view3?apimock=true][like this].`angular-apimock` will use the static file `/app/mock_data/people/jhon.get.json` instead of calling the API.
+Now if you add `apimock=true` to the browser addressbar like this [`http://localhost:8000/#!/view3?apimock=true`][local-app-url].`angular-apimock` will use the static file `/app/mock_data/people/jhon.get.json` instead of calling the API.
 
 ## Testing
 
