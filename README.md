@@ -25,14 +25,14 @@ and its package manager (npm) installed. You can get them from [here][node].
 Clone the `angular-seed` repository using git:
 
 ```
-git clone https://github.com/angular/angular-seed.git
+git clone https://github.com/pharmpress/angular-seed.git
 cd angular-seed
 ```
 
 If you just want to start a new project without the `angular-seed` commit history then you can do:
 
 ```
-git clone --depth=1 https://github.com/angular/angular-seed.git <your-project-name>
+git clone --depth=1 https://github.com/pharmpress/angular-seed.git <your-project-name>
 ```
 
 The `depth=1` tells git to only pull down one commit worth of historical data.
@@ -97,15 +97,23 @@ app/                    --> all of the source files for the application
     view2.html            --> the partial template
     view2.js              --> the controller logic
     view2_test.js         --> tests of the controller
+  mock_data/            --> Location of the static files used by ApiMock
+    people/
+      jhon.get.json         --> Mock for /api/people/jhon 
   app.js                --> main application module
   index.html            --> app layout file (the main html template file of the app)
   index-async.html      --> just like index.html, but loads js files asynchronously
 karma.conf.js         --> config file for running unit tests with Karma
 e2e-tests/            --> end-to-end tests
   protractor-conf.js    --> Protractor config file
-  scenarios.js          --> end-to-end scenarios to be run by Protractor
+  scenarios.js          --> end-to-end scenarios to be run by Protractor 
 ```
 
+## Mock API calls
+
+If you go to [http://localhost:8000/#!/view3][this page]. You will notice that an internal API call to "/api/people/jhon" is failing.
+
+Now if you add `apimock=true` to the browser addressbar [http://localhost:8000/#!/view3?apimock=true][like this].`angular-apimock` will use the static file `/app/mock_data/people/jhon.get.json` instead of calling the API.
 
 ## Testing
 
@@ -149,7 +157,7 @@ are run with the [Protractor][protractor] End-to-End test runner. It uses native
 special features for Angular applications.
 
 * The configuration is found at `e2e-tests/protractor-conf.js`.
-* The end-to-end tests are found in `e2e-tests/scenarios.js`.
+* The end-to-end tests with cucumber are found in `e2e-tests/scenarios.feature` and the steps are define in `e2e-tests/scenarios.steps.js`.
 
 Protractor simulates interaction with our web app and verifies that the application responds
 correctly. Therefore, our web server needs to be serving up the application, so that Protractor can

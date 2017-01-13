@@ -21,6 +21,6 @@ angular.module('myApp.view3', ['ngRoute', 'apiMock'])
 	$http.get('/api/people/jhon').success(function(data) {
 		$scope.name = data.name;
 	}).error(function(data) {
-		$scope.name = 'No connection :( Now add #?apimock=true to the browser addressbar (e.g. http://localhost:60280/#?apimock=true) and try again ;)';
+		$scope.name = 'No connection :( Now add #?apimock=true to the browser addressbar (e.g. http://localhost:8000/#!/view3?apimock=true) and try again ;)';
 	});
 });
