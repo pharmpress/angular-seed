@@ -105,8 +105,10 @@ app/                    --> all of the source files for the application
   index-async.html      --> just like index.html, but loads js files asynchronously
 karma.conf.js         --> config file for running unit tests with Karma
 e2e-tests/            --> end-to-end tests
-  protractor-conf.js    --> Protractor config file
-  scenarios.js          --> end-to-end scenarios to be run by Protractor 
+  protractor.conf.js                 --> Protractor config file
+  protractor-browserstack.conf.js    --> Protractor config file with Local Browserstack support
+  scenarios.feature                  --> end-to-end Cucumber scenarios to be run by Protractor
+  scenarios.steps.js                 --> Step definitions used by Cucumber
 ```
 
 ## Mock API calls
