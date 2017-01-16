@@ -109,6 +109,9 @@ e2e-tests/            --> end-to-end tests
   protractor-browserstack.conf.js    --> Protractor config file with Local Browserstack support
   scenarios.feature                  --> end-to-end Cucumber scenarios to be run by Protractor
   scenarios.steps.js                 --> Step definitions used by Cucumber
+target/
+  coverage/            --> Code coverage report generated when test are executed
+  unit/                --> Test report in Junit format (useful for Jenkins)
 ```
 
 ## Mock API calls
@@ -133,7 +136,7 @@ which we run with the [Karma][karma] test runner. We provide a Karma configurati
 The easiest way to run the unit tests is to use the supplied npm script:
 
 ```
-npm test
+npm run test-autorun
 ```
 
 This script will start the Karma test runner to execute the unit tests. Moreover, Karma will start
@@ -147,7 +150,7 @@ check that a particular version of the code is operating as expected. The projec
 predefined script to do this:
 
 ```
-npm run test-single-run
+npm test
 ```
 
 
