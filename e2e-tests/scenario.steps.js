@@ -25,7 +25,7 @@ module.exports = function() {
   });
 
   this.Then(/^I should see name "([^"]*)"$/, function (arg1, next) {
-    element.all(by.css('[ng-view] div p')).first().getText().then(function (result) {
+    element.all(by.css('[ng-view] div h2')).first().getText().then(function (result) {
       expect(result).to.match(new RegExp(arg1, "g"));
       next();
     });
