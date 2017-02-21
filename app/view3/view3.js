@@ -2,22 +2,21 @@
 
 angular.module('myApp.view3', ['ngRoute', 'apiMock'])
 
-.config(['$routeProvider', function($routeProvider) {
+.config(['$routeProvider', 'apiMockProvider', function($routeProvider, apiMockProvider) {
   $routeProvider.when('/view3', {
     templateUrl: 'view3/view3.html',
     controller: 'View3Ctrl'
   });
+  apiMockProvider.config({
+	mockDataPath: '/mock_data',
+	apiPath: '/api'
+  });
 }])
-.config(function (apiMockProvider) {
-	apiMockProvider.config({
-		mockDataPath: '/mock_data',
-		apiPath: '/api'
-	});
-})
 
 .controller('View3Ctrl', function($scope, $http, $location) {
 	$scope.name = '';
 	$scope.$location = $location;
+	//$location.search('apimock', true);
 	$http.get('/api/people/jhon').success(function(data) {
 		$scope.name = data.name;
 	}).error(function(data) {
